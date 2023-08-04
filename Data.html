@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>بيانات المستخدم</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        table {
+            width: 400px;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>بيانات المستخدم:</h2>
+    <table>
+        <tr>
+            <th>رقم الهاتف</th>
+            <th>كلمة المرور</th>
+        </tr>
+        <tr>
+            <td id="phoneNumberData"></td>
+            <td id="passwordData"></td>
+        </tr>
+    </table>
+
+    <script>
+        // استخلاص بيانات الهاتف وكلمة المرور من الرابط الحالي (URL)
+        const urlParams = new URLSearchParams(window.location.search);
+        const phoneNumber = urlParams.get('phoneNumber');
+        const password = urlParams.get('password');
+
+        // عرض البيانات في الجدول
+        document.getElementById("phoneNumberData").innerText = phoneNumber;
+        document.getElementById("passwordData").innerText = password;
+    </script>
+</body>
+</html>
